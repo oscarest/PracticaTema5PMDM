@@ -34,7 +34,6 @@ public class ConfigurarNotificacion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PendingIntent i = PendingIntent.getActivity(estaActividad, 0, getIntent(), 0);
-
                 NotificationCompat.Builder mensaje = new NotificationCompat.Builder(estaActividad, "CH_ID");
                 mensaje.setAutoCancel(true)
                         .setDefaults(Notification.DEFAULT_ALL)
