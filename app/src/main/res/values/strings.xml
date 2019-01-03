@@ -4,4 +4,11 @@
     <string name="app_name2">Configurar Notificación</string>
     <string name="button">Configurar Toast</string>
     <string name="button1">Configurar Notificación</string>
+    <string name="mostrar">Mostrar</string>
+    <string name="izquierda">Izquierda</string>
+    <string name="medio">Medio</string>
+    <string name="derecha">Derecha</string>
+    <string name="arriba">Arriba</string>
+    <string name="centro">Centro</string>
+    <string name="abajo">Abajo</string>
 </resources>
