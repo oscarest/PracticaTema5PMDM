@@ -11,4 +11,8 @@
     <string name="arriba">Arriba</string>
     <string name="centro">Centro</string>
     <string name="abajo">Abajo</string>
+    <string name="enviar">Enviar</string>
+    <string name="t_tulo_del_mensaje">Título del mensaje</string>
+    <string name="texto_del_mensaje">Texto del mensaje</string>
+    <string name="segundos_para_que_salga_la_notificaci_n">Segundos para que salga la notificación</string>
 </resources>
