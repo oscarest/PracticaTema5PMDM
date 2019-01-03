@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PracticaTema5PMDM</string>
+    <string name="app_name1">Configurar Toast</string>
+    <string name="app_name2">Configurar Notificación</string>
+    <string name="button">Configurar Toast</string>
+    <string name="button1">Configurar Notificación</string>
 </resources>
