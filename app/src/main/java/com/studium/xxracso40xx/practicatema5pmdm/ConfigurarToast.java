@@ -39,6 +39,9 @@ RadioButton radio6;
             @Override
             public void onClick(View v)
             {
+                if (!edit1.getText().toString().isEmpty() && !edit2.getText().toString().isEmpty() && !edit3.getText().toString().isEmpty())
+                {
+
                 Toast toast1 = Toast.makeText(getApplicationContext(), edit3.getText(), Toast.LENGTH_SHORT);
                 if(radio1.isChecked() && radio4.isChecked())
                 {
@@ -77,6 +80,11 @@ RadioButton radio6;
                     toast1.setGravity(Gravity.RIGHT|Gravity.BOTTOM,Integer.parseInt(edit1.getText().toString()) ,Integer.parseInt(edit2.getText().toString()) );
                 }
                 toast1.show();
+                }
+                else
+                {
+
+                }
             }
         });
     }
