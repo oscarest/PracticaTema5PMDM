@@ -84,7 +84,6 @@ RadioButton radio6;
                 }
                 else
                 {
-
                 }
             }
         });
