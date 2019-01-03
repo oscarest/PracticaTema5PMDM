@@ -5,6 +5,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,8 +39,9 @@ public class ConfigurarNotificacion extends AppCompatActivity {
                 mensaje.setAutoCancel(true)
                         .setDefaults(Notification.DEFAULT_ALL)
                         .setWhen(System.currentTimeMillis() + (Integer.parseInt(edit3.getText().toString()) * 1000))
+                        .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.imagen))
                         //.setWhen(System.currentTimeMillis() + AlarmManager.ELAPSED_REALTIME * Integer.parseInt(edit3.getText().toString()))
-                        .setSmallIcon(R.drawable.ic_launcher_background)
+                        .setSmallIcon(R.drawable.imagen)
                         .setPriority(Notification.PRIORITY_MAX) // No válido en API 26
                         .setContentTitle(edit1.getText())
                         .setContentText(edit2.getText())
