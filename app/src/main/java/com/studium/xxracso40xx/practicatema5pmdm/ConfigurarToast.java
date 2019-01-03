@@ -39,6 +39,7 @@ RadioButton radio6;
             @Override
             public void onClick(View v)
             {
+                //ESTE IF SE HA REALIZADO PARA PARAR EL ERROR EN EL CASO DE QUE EL USUARIO NO ESCRIBA ALGO
                 if (!edit1.getText().toString().isEmpty() && !edit2.getText().toString().isEmpty() && !edit3.getText().toString().isEmpty())
                 {
 
