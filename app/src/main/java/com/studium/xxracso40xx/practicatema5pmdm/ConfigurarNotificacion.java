@@ -12,6 +12,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.logging.Handler;
 
 public class ConfigurarNotificacion extends AppCompatActivity {
     AppCompatActivity estaActividad;
@@ -19,6 +22,7 @@ public class ConfigurarNotificacion extends AppCompatActivity {
     EditText edit1;
     EditText edit2;
     EditText edit3;
+    Handler myHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -30,14 +34,15 @@ public class ConfigurarNotificacion extends AppCompatActivity {
         edit1 = findViewById(R.id.editText4);
         edit2 = findViewById(R.id.editText5);
         edit3 = findViewById(R.id.editText6);
-        boton.setOnClickListener(new View.OnClickListener() {
+        boton.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                PendingIntent i = PendingIntent.getActivity(estaActividad, 0, getIntent(), 0);
-                NotificationCompat.Builder mensaje = new NotificationCompat.Builder(estaActividad, "CH_ID");
+            public void onClick(View v)
+            { PendingIntent i = PendingIntent.getActivity(estaActividad, 0, getIntent(), 0);
+                final NotificationCompat.Builder mensaje = new NotificationCompat.Builder(estaActividad, "CH_ID");
                 mensaje.setAutoCancel(true)
                         .setDefaults(Notification.DEFAULT_ALL)
-                        .setWhen(System.currentTimeMillis() + (Integer.parseInt(edit3.getText().toString()) * 1000))
+                        // .setWhen(System.currentTimeMillis() + (Integer.parseInt(edit3.getText().toString()) * 1000))
                         .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.imagen))
                         //.setWhen(System.currentTimeMillis() + AlarmManager.ELAPSED_REALTIME * Integer.parseInt(edit3.getText().toString()))
                         .setSmallIcon(R.drawable.imagen)
@@ -45,8 +50,18 @@ public class ConfigurarNotificacion extends AppCompatActivity {
                         .setContentTitle(edit1.getText())
                         .setContentText(edit2.getText())
                         .setContentIntent(i);
-                NotificationManager nM = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                nM.notify(1, mensaje.build());
+
+
+                final long changeTime = Integer.parseInt(edit3.getText().toString()) * 1000;
+                boton.postDelayed(new Runnable() {
+                    @Override
+                    public void run()
+                    {
+                        NotificationManager nM = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                        nM.notify(1, mensaje.build());
+                    }
+                }, changeTime);
+
             }
         });
     }
