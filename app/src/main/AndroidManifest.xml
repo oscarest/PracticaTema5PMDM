@@ -19,5 +19,4 @@
         <activity android:name=".ConfigurarToast"  android:label="@string/app_name1"/>
         <activity android:name=".ConfigurarNotificacion"  android:label="@string/app_name2"></activity>
     </application>
-
 </manifest>
