@@ -65,9 +65,7 @@ public class ConfigurarNotificacion extends AppCompatActivity {
             }
             else
             {
-
             }
-
             }
         });
     }
