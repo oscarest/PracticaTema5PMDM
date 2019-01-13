@@ -20,6 +20,7 @@ RadioButton radio3;
 RadioButton radio4;
 RadioButton radio5;
 RadioButton radio6;
+    int numero=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +41,17 @@ RadioButton radio6;
             public void onClick(View v)
             {
                 //ESTE IF SE HA REALIZADO PARA PARAR EL ERROR EN EL CASO DE QUE EL USUARIO NO ESCRIBA ALGO
-                if (!edit1.getText().toString().isEmpty() && !edit2.getText().toString().isEmpty() && !edit3.getText().toString().isEmpty())
+                //if (!edit1.getText().toString().isEmpty() && !edit2.getText().toString().isEmpty() && !edit3.getText().toString().isEmpty())
+                if (!edit3.getText().toString().isEmpty())
                 {
+                    if(edit1.getText().toString().isEmpty())
+                    {
+                        edit1.setText("" +numero);
+                    }
+                    if(edit2.getText().toString().isEmpty())
+                    {
+                        edit2.setText("" +numero);
+                    }
                 Toast toast1 = Toast.makeText(getApplicationContext(), edit3.getText(), Toast.LENGTH_SHORT);
                 if(radio1.isChecked() && radio4.isChecked())
                 {
@@ -83,6 +93,7 @@ RadioButton radio6;
                 }
                 else
                 {
+
                 }
             }
         });
