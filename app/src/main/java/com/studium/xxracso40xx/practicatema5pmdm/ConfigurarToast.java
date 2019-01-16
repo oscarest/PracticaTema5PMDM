@@ -42,16 +42,17 @@ RadioButton radio6;
             {
                 //ESTE IF SE HA REALIZADO PARA PARAR EL ERROR EN EL CASO DE QUE EL USUARIO NO ESCRIBA ALGO
                 //if (!edit1.getText().toString().isEmpty() && !edit2.getText().toString().isEmpty() && !edit3.getText().toString().isEmpty())
+                if(edit1.getText().toString().isEmpty())
+                {
+                    edit1.setText("" +numero);
+                }
+                if(edit2.getText().toString().isEmpty())
+                {
+                    edit2.setText("" +numero);
+                }
                 if (!edit3.getText().toString().isEmpty())
                 {
-                    if(edit1.getText().toString().isEmpty())
-                    {
-                        edit1.setText("" +numero);
-                    }
-                    if(edit2.getText().toString().isEmpty())
-                    {
-                        edit2.setText("" +numero);
-                    }
+
                 Toast toast1 = Toast.makeText(getApplicationContext(), edit3.getText(), Toast.LENGTH_SHORT);
                 if(radio1.isChecked() && radio4.isChecked())
                 {
